@@ -1,12 +1,15 @@
 const express = require('express');
-const PORT = 8080;
 const sequelize = require("./database/database");
-const router = require('./routes/studentRouter');
+const studentRouter = require('./routes/studentRouter');
+const gradeRouter = require('./routes/gradesRouter');
+
+const PORT = process.env.PORT;
 
 const app = express();
 app.use(express.json());
 
-app.use(router);
+app.use(gradeRouter);
+app.use(studentRouter);
 
 const startServer = async ()=>{
 try {
@@ -22,5 +25,5 @@ startServer()
 
 app.listen(PORT, ()=> {
     console.log(`Server is running on PORT: ${PORT}`);
-    
+
 })

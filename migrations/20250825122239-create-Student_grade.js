@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('student_grade', {
+    await queryInterface.createTable('student_grades', {
       id: {
         allowNull: false,
         primaryKey: true,
@@ -10,7 +10,7 @@ module.exports = {
       },
       week: {
         type: Sequelize.INTEGER,
-        allowNull: false    
+        allowNull: false
       },
       punctuality: {
         type: Sequelize.INTEGER,
@@ -51,6 +51,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('student_grade');
+    await queryInterface.dropTable('student_grades');
   }
 };

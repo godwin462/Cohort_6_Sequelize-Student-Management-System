@@ -1,8 +1,8 @@
-const { Sequelize, DataTypes, Model, } = require('sequelize');
+const {DataTypes, Model, } = require('sequelize');
 const sequelize = require('../database/database');
 const Student = require('./students');
 
-class Student_grade extends Model { }
+class Student_grade extends Model {}
 
 Student_grade.init(
   {
