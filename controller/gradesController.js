@@ -54,6 +54,7 @@ exports.createStudentGrade = async (req, res) => {
 
         const {studentId, week, punctuality, assignment, classwork, personal_defence, attendance} = req.body;
         const student = await Student.findByPk(studentId);
+
         if(!student) {
             return res.status(404).json({
                 error: "Student not found",
