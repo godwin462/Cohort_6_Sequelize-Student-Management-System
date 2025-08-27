@@ -1,4 +1,5 @@
 const Student_grade = require("../models/Student_grade");
+const Student = require("../models/students");
 
 // get all student grades
 exports.getAllGrades = async (req, res) => {
@@ -51,8 +52,7 @@ exports.createStudentGrade = async (req, res) => {
         references
         total */
 
-        const {studentId} = req.params;
-        const {week, punctuality, assignment, classwork, personal_defence, attendance} = req.body;
+        const {studentId, week, punctuality, assignment, classwork, personal_defence, attendance} = req.body;
         const student = await Student.findByPk(studentId);
         if(!student) {
             return res.status(404).json({
